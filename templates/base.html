@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Kevin's First Website</title>
+    <link type="text/css" rel="stylesheet" href="/css/bootstrap.css" />
+    <link type="text/css" rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon"> 
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="navbar-fixed-top" role="navigation">
+        <div id="container">
+            <ul class="navbar-right">
+                {% if u %}
+                <li>{{u.username}}</li>
+                <li><a href="/logout">logout</a></li>
+                {% else %}
+                <li><a href="/signup">signup</a></li>
+                <li><a href="/login">login</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+    <div class="jumbotron">
+        <div id="container">
+            <a href="/"><h2>Kevin's First Website</h2></a>
+            <p>My first shot at this web development thing.</p>
+        </div>
+    </div>
+    <div id="body">
+            {% block content %}
+            {% endblock %}
+    </div>
+    <!-- NAVBAR -->
+    <div class="navbar-fixed-bottom" role="navigation">
+        <div id="container">
+            <ul class="navbar-left">
+                <li><a href="/dice">dice</a></li>
+                <li><a href="/cypher">rot13</a></li>
+                <li><a href="/fizzbuzz">fizzbuzz</a></li>
+                <li><a href="/ascii">asciichan</a></li>
+                <li><a href="/blog">blog</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- END OF NAVBAR -->
+<script src="/js/jquery-2.1.1.min.js"></script>
+<script src="/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="content-main">
+    <div class="container">
+        <h1>Roll some dice!</h1>
+
+        <form method="post">
+        	<label>Number of dice:</label>
+        	<input type="text" name="nodice" value="{{nodice}}">
+        	<label>Number of sides:</label>
+        	<input type="text" name="nosides" value="{{nosides}}">
+        	<div class="error">{{error}}</div>
+        	<br /><input type="submit" class="carrot-button" value="Roll!">
+        </form>
+
+        {% if summary %}
+            <br><br>
+            <h2>Rolls!</h2>
+            <ul>
+                {% for roll in summary['rolls'] %}
+                    <li>{{roll}}</li>
+                {% endfor %}
+            </ul>
+
+        You rolled {{summary['sum']}} out of {{summary['potential']}}!
+        <br>
+        {{summary['percent']}}%
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

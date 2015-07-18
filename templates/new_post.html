@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+	<form method="post" class="new-post">
+		<label>
+			Title:
+		</label>
+		<input type="text" name="subject" value="{{title}}" class="textinput" placeholder="What's on your mind, bruh?">
+		<label>
+			Post:
+		</label>
+		<textarea name="content" class="textinput">
+			{{post}}
+		</textarea>
+		<div class="error">
+			{{error}}
+		</div>
+		<br />
+		<button type="submit" class ="btn" class="carrot-button" class="new-post-submit">
+			Submit
+		</button>
+	</form>
+</div>
+{% endblock %}

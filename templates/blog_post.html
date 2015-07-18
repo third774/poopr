@@ -1,0 +1,30 @@
+{% extends "blog.html" %}
+
+{% block content %}
+<div class="main-content">
+	<div class="container">
+		<h1>
+			<a href="/blog/">
+				back to mainpage
+			</a>
+		</h1>
+		<div>
+			queried {{q_time}} seconds ago
+		</div>
+		<div class="post">
+			<div>
+				{{post.title|safe}}
+			</div>
+			<div>
+				{{post.render_post()|safe}}
+			</div>
+			{% if u.username == post.username %}
+			<br />
+			<a href="/blog/delete/{{post.key().id()}}">Delete this post</a>
+		</div>
+		{% endif %}
+	</div>
+</div>
+
+
+{% endblock %}

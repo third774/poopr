@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<div class="container">
+    <h2>Signup</h2>
+    <h4>Already a member? <a href='/login'>Log in here</a></h4>
+    <form method="post">
+        <table>
+            <tr>
+                <td class="signuplabel">Username:</td>
+                <td><input type="text" name="username" value="{{username}}"></td>
+                <td class="error">{{usernameError}}</td>
+            </tr>
+            <tr>
+                <td class="signuplabel">Password:</td>
+                <td><input type="password" name="password"></td>
+                <td class="error">{{passwordError}}</td>
+            </tr>
+            <tr>
+                <td class="signuplabel">Verify Password:</td>
+                <td><input type="password" name="verify"></td>
+                <td class="error">{{verifyError}}</td>
+            </tr>
+            <tr>
+                <td class="signuplabel">Email (optional):</td>
+                <td><input type="text" name="email" value="{{email}}"></td>
+                <td class="error">{{emailError}}</td>
+            </tr>
+            <tr>
+                <td colspan="2" style="align: right;"><input type="submit" class="carrot-button"></td>
+            </tr>
+        </table>
+    </form>
+</div>
+{% endblock %}

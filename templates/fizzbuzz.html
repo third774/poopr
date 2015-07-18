@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<div class="container">
+    <h2>FIZZBUZZ!</h2>
+    <div class="row">
+        <div class="col-md-3">
+            <form method="post">
+                Enter a number to FizzBuzz:<br /><input type="text" name="i">
+                <br />
+                <div class="error">
+                {{error}}&nbsp;
+                </div>
+                <input type="submit" class="carrot-button">
+            </form>
+        </div>
+        <div class="col-md-1">
+            <ol>
+                {% for x in range(1,n+1) %}
+                {% if ((x is divisibleby 3) and (x is divisibleby 5)) %}
+                <li>FizzBuzz</li>
+                {% elif x is divisibleby 3 %}
+                <li>Fizz</li>
+                {% elif x is divisibleby 5 %}
+                <li>Buzz</li>
+                {% else %}
+                <li>{{x}}</li>
+                {% endif %}
+                {% endfor %}
+            </ol>
+        </div>
+    </div>
+</div>
+{% endblock %}

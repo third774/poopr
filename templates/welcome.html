@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+        {% if u %}
+        <h2>Welcome, {{u.username}}</h2>
+        {% else %}
+        <h2>Welcome!</h2>
+        {% endif %}
+    	<h4><a href='/blog/'>Click here to visit the blog!</a></h4>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<h2>Log in</h2>
+<h4>Not a member? <a href='/signup'>Sign up!</a></h4>
+<form method="post">
+    <table>
+        <tr>
+            <td class="label">Username:</td>
+            <td><input type="text" name="username"></td>
+        </tr>
+        <tr>
+            <td class="label">Password:</td>
+            <td><input type="password" name="password"></td>
+        </tr>
+        <tr>
+            <td style="align: left;"><input type="submit" class="carrot-button"></td>
+            <td class="error" style="margin-top: ">{{loginError}}</td>
+        </tr>
+    </table>
+</form>
+{% endblock %}
