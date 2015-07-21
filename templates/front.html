@@ -1,41 +1,44 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>/ascii/</h1>
-
-<table>
-    <tr>
-        <td>
-            <form method="post">
-                <label>
-                    <div>title</div>
-                    <input type="text" name="title" value="{{title}}">
-                </label>
-
-                <label>
-                    <div>art</div>
-                    <textarea name="art">{{art}}</textarea>
-                </label>
-                <br />
-                <div class="error">{{error}}</div>
-                <br />
-                <input type="submit" class="carrot-button">
-            </form>
-        </td>
-        <td class="map">
-        {% if img_url %}
-            <img src="{{img_url}}" />
-        {% endif %}
-        </td>
-    </tr>
-</table>
-
-<hr>
-
-{% for art in arts %}
-    <div class="art">
-        <div class="art-title">{{art.title}}</div><br />
-        <pre class="art-body">{{art.art}}</pre>
+<div class="container">
+    <div class="row">
+        <h1>/ascii/</h1>
     </div>
+    <div class="row">
+        <table>
+            <tr>
+                <td>
+                    <form method="post">
+                        <label>
+                            <div>title</div>
+                            <input type="text" name="title" value="{{title}}">
+                        </label>
+
+                        <label>
+                            <div>art</div>
+                            <textarea name="art">{{art}}</textarea>
+                        </label>
+                        <br />
+                        <div class="error">{{error}}</div>
+                        <br />
+                        <input type="submit" class="carrot-button">
+                    </form>
+                </td>
+                <td class="map">
+                    {% if img_url %}
+                    <img src="{{img_url}}" />
+                    {% endif %}
+                </td>
+            </tr>
+        </table>
+        <hr>
+        {% for art in arts %}
+        <div class="art">
+            <div class="art-title">{{art.title}}</div><br />
+            <pre class="art-body">{{art.art}}</pre>
+        </div>
+    </div>
+</div>
 {% endfor %}
 {% endblock %}

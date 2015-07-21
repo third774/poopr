@@ -1,6 +1,7 @@
 body {
-    padding-top: 5em;
     padding-bottom: 10em;
+    min-height: 2000px;
+    padding-top: 70px;
 }
 
 .oranged {
@@ -55,11 +56,11 @@ body {
     color: ;
 }
 
-.navbar-fixed-top li {
+/*.navbar-fixed-top li {
     display: inline-block;
     font-size: 1.4em;
     padding: 1em 1em;
-}
+}*/
 
 .navbar-fixed-top li a {
     display: block;
@@ -166,4 +167,3 @@ textarea {
 .signuplabel {
     color: black;
 }
-
