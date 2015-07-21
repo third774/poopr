@@ -1,9 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
-        {% if u %}
-        <h2>Welcome, {{u.username}}</h2>
-        {% else %}
-        <h2>Welcome!</h2>
-        {% endif %}
-    	<h4><a href='/blog/'>Click here to visit the blog!</a></h4>
+<div class="jumbotron">
+  <div class="container">
+    <h1>Howdy!</h1>
+    <p>My first shot at this website thing. Please excuse the mess.</p>
+  </div>
+</div>
+
+<div class="container">
+    {% if u %}
+    <h2>Welcome, {{u.username}}</h2>
+    {% else %}
+    <h2>Welcome!</h2>
+    {% endif %}
+	<h4><a class="btn btn-primary btn-lg" href="/blog/" role="button">Click here to visit the blog!</a></h4>
+</div>
 {% endblock %}
