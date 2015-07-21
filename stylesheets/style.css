@@ -1,7 +1,7 @@
 body {
     padding-bottom: 10em;
     min-height: 2000px;
-    padding-top: 70px;
+    padding-top: 51px;
 }
 
 .oranged {
@@ -11,6 +11,13 @@ body {
 .jumbotron {
     margin-bottom: 0px;
     background-image: url(http://i.imgur.com/r36zRAz.png);
+}
+
+.jumbotron h1 {
+    top: 40px;
+    position: relative;
+    font-family: Verdana, Geneva, sans-serif;
+    color: white;
 }
 
 .jumbotron h2 {
