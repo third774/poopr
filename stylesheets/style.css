@@ -1,4 +1,4 @@
-body {
+#body {
     padding-bottom: 10em;
     min-height: 2000px;
     padding-top: 51px;
@@ -40,12 +40,17 @@ body {
 
 .jumbotron a:hover {
      color: gray;
-     text-decoration:none; 
-     cursor:pointer;  
+     text-decoration:none;
+     cursor:pointer;
 }
 
 #header p {
     color: LightGray;
+}
+
+/* Added to get rid of navbar dropdown scrollbar */
+.navbar-fixed-top .navbar-collapse {
+    max-height: 100%;
 }
 
 .navbar-fixed-bottom {
@@ -173,4 +178,8 @@ textarea {
 
 .signuplabel {
     color: black;
+}
+
+.login-form {
+    padding: 20px;
 }
