@@ -10,6 +10,10 @@ handlers:
   static_dir: stylesheets
   mime_type: "text/css"
 
+- url: /images
+  static_dir: images
+  mime_type: image
+
 - url: /css
   static_dir: css
   mime_type: "text/css"
