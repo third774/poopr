@@ -4,18 +4,20 @@
 <div class="content-main">
     <div class="container">
         <h1>Roll some dice!</h1>
-
-        <form method="post">
-        	<label>Number of dice:</label>
-        	<input type="text" name="nodice" value="{{nodice}}">
-        	<label>Number of sides:</label>
-        	<input type="text" name="nosides" value="{{nosides}}">
-        	<div class="error">{{error}}</div>
-        	<br /><input type="submit" class="btn btn-primary btn-lg" value="Roll!">
+        <form class="form-inline" method="post">
+            <div class="form-group">
+                <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" id="exampleInputAmount" placeholder="# of dice" name="nodice" value="{{nodice}}">
+                    <div class="input-group-addon">D</div>
+                    <input type="text" class="form-control" id="exampleInputAmount" placeholder="# of sides" name="nosides" value="{{nosides}}">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Roll!</button>
         </form>
 
         {% if summary %}
-            <br><br>
+            <br>
             <h2>Rolls!</h2>
             <ul>
                 {% for roll in summary['rolls'] %}
