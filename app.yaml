@@ -1,4 +1,4 @@
-application: poopr
+application: poopr-1020
 version: 1
 runtime: python27
 api_version: 1
@@ -9,6 +9,10 @@ handlers:
 - url: /stylesheets
   static_dir: stylesheets
   mime_type: "text/css"
+
+- url: /images
+  static_dir: images
+  mime_type: image
 
 - url: /css
   static_dir: css

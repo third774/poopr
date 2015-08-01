@@ -3,34 +3,31 @@
 
 {% block content %}
 <div class="container">
-    <h2>Signup</h2>
+    <h2>Sign Up</h2>
     <h4>Already a member? <a href='/login'>Log in here</a></h4>
     <form method="post">
-        <table>
-            <tr>
-                <td class="signuplabel">Username:</td>
-                <td><input type="text" name="username" value="{{username}}"></td>
-                <td class="error">{{usernameError}}</td>
-            </tr>
-            <tr>
-                <td class="signuplabel">Password:</td>
-                <td><input type="password" name="password"></td>
-                <td class="error">{{passwordError}}</td>
-            </tr>
-            <tr>
-                <td class="signuplabel">Verify Password:</td>
-                <td><input type="password" name="verify"></td>
-                <td class="error">{{verifyError}}</td>
-            </tr>
-            <tr>
-                <td class="signuplabel">Email (optional):</td>
-                <td><input type="text" name="email" value="{{email}}"></td>
-                <td class="error">{{emailError}}</td>
-            </tr>
-            <tr>
-                <td colspan="2" style="align: right;"><input type="submit" class="carrot-button"></td>
-            </tr>
-        </table>
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" name="username" value="{{username}}" placeholder="Username">
+            {{usernameError}}
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" name="password" placeholder="Password">
+            {{passwordError}}
+        </div>
+        <div class="form-group">
+            <label for="verify">Verify Password</label>
+            <input type="password" class="form-control" name="verify" placeholder="Verify Password">
+            {{verifyError}}
+        </div>
+        <div class="form-group">
+            <label for="email">Email (optional)</label>
+            <input type="text" class="form-control" name="email" value="{{email}}" placeholder="Email">
+            {{emailError}}
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+        </div>
     </form>
 </div>
 {% endblock %}

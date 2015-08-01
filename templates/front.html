@@ -6,32 +6,26 @@
         <h1>/ascii/</h1>
     </div>
     <div class="row">
-        <table>
-            <tr>
-                <td>
-                    <form method="post">
-                        <label>
-                            <div>title</div>
-                            <input type="text" name="title" value="{{title}}">
-                        </label>
+        <form method="post">
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input class="form-control" type="text" name="title" value="{{title}}" placeholder="Title">
+            </div>
+            <div class="form-group">
+                <label for="art">Art</label>
+                <textarea class="form-control" name="art" placeholder="Paste ASCII art here" rows="6">{{art}}</textarea>
+            </div>
+            <div class="error">{{error}}</div>
+            <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+        </form>
 
-                        <label>
-                            <div>art</div>
-                            <textarea name="art">{{art}}</textarea>
-                        </label>
-                        <br />
-                        <div class="error">{{error}}</div>
-                        <br />
-                        <input type="submit" class="carrot-button">
-                    </form>
-                </td>
-                <td class="map">
+
                     {% if img_url %}
                     <img src="{{img_url}}" />
                     {% endif %}
-                </td>
-            </tr>
-        </table>
+
+
+
         <hr>
         {% for art in arts %}
         <div class="art">

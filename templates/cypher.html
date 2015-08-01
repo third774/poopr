@@ -3,12 +3,12 @@
 
 {% block content %}
 <div class="container">
+<h2>Enter some text to ROT13:</h2>
 <form method="post">
-    <h2>Enter some text to ROT13:</h2>
-    <br>
-    <textarea name="text" style="height: 100px; width: 400px;">{{cypher_text|safe}}</textarea>
-    <br /><br />
-    <input class="btn btn-primary btn-lg" type="submit">
+	<div class="form-group">
+    	<textarea class="form-control" rows="3" name="text">{{cypher_text|safe}}</textarea>
+    </div>
+    <button class="btn btn-primary btn-lg" type="submit">Submit</button>
 </form>
 </div>
 {% endblock %}
