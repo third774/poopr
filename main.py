@@ -537,6 +537,52 @@ class signupHandler(Handler):
                         verifyError = verifyError, 
                         emailError = emailError)
 
+class poopHandler(Handler):
+    def get(self):
+        insults = [
+            "You're as useless as a Red Lights in Grand Theft Auto",
+            "You're as useless as a knitted condom.",
+            "You're as useless as a screen door on a submarine.",
+            "You're as useless as ejection seats on a helicopter.",
+            "You're as useless as Anne Frank's drum kit.",
+            "You're as useless as a ham sandwich at a Barmitzvah.",
+            "You're as useless as condom machines in the Vatican.",
+            "You're as useless as pickup lines to George Clooney",
+            "You're as useless as the G in Lasagna.",
+            "You're as useless as a glass hammer.",
+            "You're as useless as deodorant to cab drivers.",
+            "You're as useless as a concrete parachute.",
+            "You're as useless as the second shift button on the keyboard.",
+            "You're as useless as a wooden frying-pan.",
+            "You're as useless as a color blind interior decorator.",
+            "You're as useless as the 'ay' in 'okay'",
+            "You're as useless as rubber lips on a woodpecker.",
+            "You're as useless as a fart in a space suit.",
+            "You're as useless as a chocolate fireguard.",
+            "You're as useless as a knife without a blade.",
+            "You're as useless as a cup of decaf.",
+            "You're as useless as a remote without batteries.",
+            "You're as useless as a piece of pork at a Jewish wedding.",
+            "You're as useless as a phone without a signal.",
+            "You're as useless as a keyboard without keys.",
+            "You're as useless as a chocolate teapot.",
+            "You're as useless as a one-legged man at an arse kicking contest.",
+            "You're as useless as handles on a snowball.",
+            "You're as useless as a gun without ammo.",
+            "You're as useless as a grave robber in a crematorium.",
+            "You're as useless as Han Solo without Chewbacca and the Millennium Falcon.",
+            "You're as useless as a pen without ink.",
+            "You're as useless as an ashtray on a bike.",
+            "You're as useless as a Computer without Internet.",
+            "You're as useless as an XBox without Llive.",
+            "You're as useless as a TV without Cable.",
+            "You're as useless as white-out to a computer data entry clerk.",
+            "You're as useless as 01100010 01101001 01101110 01100001 01110010 01111001 without 00110000",
+            "You're as useless as a underwear to Tarzan."
+        ]
+        insult = random.choice(insults)
+        self.render('poop.html', insult = insult)
+
 class rot13(Handler):
     def ceasar(self, text):
         result = ""
@@ -565,7 +611,7 @@ class rot13(Handler):
         self.render('cypher.html', cypher_text = cypher_text)
 
 app = webapp2.WSGIApplication([
-    ('/?', welcomeHandler),
+    ('/?', poopHandler),
     ('/blog/?(?:\.json)?', blog_main_page),
     ('/flush', memcache_flush),
     #webapp2.Route(r'/.json', handler=blog_json),
@@ -577,6 +623,7 @@ app = webapp2.WSGIApplication([
     webapp2.Route(r'/logout', handler=logoutHandler),
     webapp2.Route(r'/welcome', handler=welcomeHandler),
     webapp2.Route(r'/shoppinglist', handler=ShoppingList),
+    webapp2.Route(r'/poop', handler=poopHandler),
     webapp2.Route(r'/fizzbuzz', handler=FizzBuzzHandler), 
     webapp2.Route(r'/ascii', handler=ascii_page), 
     ('/blog/([0-9]+)(?:\.json)?', blog_post),
