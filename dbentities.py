@@ -38,6 +38,12 @@ class Art(db.Model):
     coords = db.GeoPtProperty()
     source_ip = db.StringProperty()
 
+class Insult(db.Model):
+    insult = db.StringProperty(required = True)
+    created = db.DateTimeProperty(auto_now_add = True)
+    approved = db.BooleanProperty(required=True, default=False)
+    source_ip = db.StringProperty()
+
 class Blog_Post(db.Model):
     title = db.StringProperty(required = True)
     post = db.TextProperty(required = True)
