@@ -32,6 +32,10 @@ a {
     outline: 0 !important;
 }
 
+button {
+    outline: 0 !important;
+}
+
 a:hover,
 a:focus {
     color: #eb3812;
