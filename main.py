@@ -587,6 +587,18 @@ class poopSubmissionHandler(Handler):
     def get(self):
         self.render('submit-poop.html')
 
+    def post(self):
+        insult = self.request.get('insult')
+        source_ip = self.request.remote_addr
+        
+        #Insert in DB
+        i = Insult(insult = insult, source_ip=source_ip)
+        i.put()
+
+        self.render('submit-poop.html')
+
+
+        
 
 class rot13(Handler):
     def ceasar(self, text):
