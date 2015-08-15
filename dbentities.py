@@ -42,7 +42,6 @@ class Insult(db.Model):
     insult = db.StringProperty(required = True)
     created = db.DateTimeProperty(auto_now_add = True)
     approved = db.BooleanProperty(required=True, default=False)
-    reviewed = db.BooleanProperty(required=True, default=False)
     source_ip = db.StringProperty()
 
 class Blog_Post(db.Model):
