@@ -583,6 +583,11 @@ class poopHandler(Handler):
         insult = random.choice(insults)
         self.render('poop.html', insult = insult)
 
+class poopSubmissionHandler(Handler):
+    def get(self):
+        self.render('submit-poop.html')
+
+
 class rot13(Handler):
     def ceasar(self, text):
         result = ""
@@ -626,6 +631,7 @@ app = webapp2.WSGIApplication([
     webapp2.Route(r'/poop', handler=poopHandler),
     webapp2.Route(r'/fizzbuzz', handler=FizzBuzzHandler), 
     webapp2.Route(r'/ascii', handler=ascii_page), 
+    webapp2.Route(r'/submit', handler=poopSubmissionHandler),
     ('/blog/([0-9]+)(?:\.json)?', blog_post),
     #webapp2.Route(r'/<postid:\d+>', handler=blog_post, name='posdtid'),
     #webapp2.Route(r'/<postid:\d+>.json', handler=blog_post_json, name='posdtid'),
